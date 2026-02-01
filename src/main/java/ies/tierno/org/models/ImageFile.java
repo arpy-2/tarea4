@@ -1,10 +1,10 @@
 package ies.tierno.org.models;
 
-public class Image extends File {
+public class ImageFile extends File {
     private int height;
     private int width;
 
-    public Image(int size, String path, int height, int width) {
+    public ImageFile(int size, String path, int height, int width) {
         super(size, path);
         this.height = height;
         this.width = width;

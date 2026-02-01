@@ -1,9 +1,9 @@
 package ies.tierno.org.models;
 
-public class Audio extends File {
+public class AudioFile extends File {
     private int duration;
 
-    public Audio(int size, String path, int duration) {
+    public AudioFile(int size, String path, int duration) {
         super(size, path);
         this.duration = duration;
     }

@@ -1,9 +1,9 @@
 package ies.tierno.org.models;
 
-public class Text extends File {
+public class TextFile extends File {
     private String text;
 
-    public Text(int size, String path, String text) {
+    public TextFile(int size, String path, String text) {
         super(size, path);
         this.text = text;
     }

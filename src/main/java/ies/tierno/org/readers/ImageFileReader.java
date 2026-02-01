@@ -1,31 +1,32 @@
 package ies.tierno.org.readers;
 
-import ies.tierno.org.models.Audio;
 import ies.tierno.org.models.File;
-
+import ies.tierno.org.models.ImageFile;
 import java.util.Scanner;
 
-public class AudioReader implements FileReader {
+public class ImageFileReader implements FileReader {
     private Scanner scanner;
 
-    public AudioReader() {
+    public ImageFileReader() {
         this.scanner = new Scanner(System.in);
     }
 
     @Override
     public File readFile() {
-        System.out.println("Creando archivo audio");
+        System.out.println("Creando archivo imagen");
         System.out.print("Tamaño (bytes): ");
-
         int size = scanner.nextInt();
 
-        System.out.print("Duración (segundos): ");
-        int duration = scanner.nextInt();
+        System.out.print("Altura (px): ");
+        int height = scanner.nextInt();
+
+        System.out.print("Anchura (px): ");
+        int width = scanner.nextInt();
         scanner.nextLine();
 
         System.out.print("Ruta: ");
         String path = scanner.nextLine();
 
-        return new Audio(size, path, duration);
+        return new ImageFile(size, path, height, width);
     }
 }

@@ -1,6 +1,6 @@
 package ies.tierno.org;
 
-import ies.tierno.org.models.Text;
+import ies.tierno.org.models.TextFile;
 import ies.tierno.org.models.Program;
 import ies.tierno.org.readers.ProgramReader;
 import java.util.Scanner;
@@ -13,7 +13,7 @@ public class Main {
 
         ProgramReader programReader = new ProgramReader();
 
-        Program<Text> program = programReader.readProgram();
+        Program<TextFile> program = programReader.readProgram();
 
         System.out.print("Introduce el path de salida: ");
         String outputPath = scanner.nextLine();

@@ -1,6 +1,6 @@
 package ies.tierno.org.readers;
 
-import ies.tierno.org.models.Text;
+import ies.tierno.org.models.TextFile;
 import ies.tierno.org.models.Program;
 import java.util.Scanner;
 
@@ -11,22 +11,22 @@ public class ProgramReader {
         this.scanner = new Scanner(System.in);
     }
 
-    public Program<Text> readProgram() {
+    public Program<TextFile> readProgram() {
         System.out.println("Creando programa...");
 
-        System.out.print("Nombre para el programa: ");
+        System.out.print("Introduce el nombre del programa: ");
         String programName = scanner.nextLine();
 
-        System.out.print("¿Cuántos archivos de texto tendrá? ");
+        System.out.print("¿Cuántos archivos de texto tendrá? "); // Más claro
         int numFiles = scanner.nextInt();
         scanner.nextLine();
 
-        Text[] textFiles = new Text[numFiles];
-        TextReader textFileReader = new TextReader();
+        TextFile[] textFiles = new TextFile[numFiles];
+        TextFileReader textReader = new TextFileReader();
 
         for (int i = 0; i < numFiles; i++) {
             System.out.println("Archivo " + (i + 1) + ":");
-            textFiles[i] = (Text) textFileReader.readFile();
+            textFiles[i] = (TextFile) textReader.readFile();
         }
 
         return new Program<>(programName, textFiles);

@@ -1,32 +1,30 @@
 package ies.tierno.org.readers;
 
 import ies.tierno.org.models.File;
-import ies.tierno.org.models.Image;
+import ies.tierno.org.models.TextFile;
+
 import java.util.Scanner;
 
-public class ImageReader implements FileReader {
+public class TextFileReader implements FileReader {
     private Scanner scanner;
 
-    public ImageReader() {
+    public TextFileReader() {
         this.scanner = new Scanner(System.in);
     }
 
     @Override
     public File readFile() {
-        System.out.println("Creando archivo imagen");
+        System.out.println("Creando archivo de texto");
         System.out.print("Tamaño (bytes): ");
         int size = scanner.nextInt();
-
-        System.out.print("Altura (px): ");
-        int height = scanner.nextInt();
-
-        System.out.print("Anchura (px): ");
-        int width = scanner.nextInt();
         scanner.nextLine();
 
         System.out.print("Ruta: ");
         String path = scanner.nextLine();
 
-        return new Image(size, path, height, width);
+        System.out.print("Texto contenido: ");
+        String text = scanner.nextLine();
+
+        return new TextFile(size, path, text);
     }
 }
